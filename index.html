@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game</title>
+
+    <!-- jQuery CDN -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+
+
+    <!-- Reset -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"    
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">
+
+    <!-- Local Stylesheet -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <img id="the-office-team" src="./assets/images/the_office_team.jpg" alt="The Office Team" width="100%">
+    <img id="trivia" src="./assets/images/trivia.png">
+    <div class="container">
+
+        <div class="container">
+            <audio autoplay id="theme-song" src="./assets/audio/The Office.mp3" volume="0"></audio>
+            <div id="timer-display">
+                <button class="btn btn-secondary start">Start Game</button>
+                <button class="btn btn-secondary play-theme">Play Theme</button>
+            </div>
+
+            <div id="display">
+                    <hr>
+                    <h4 class='question'>In S1E1 'Plot': Who started their first day at Dunder Mifflin Scranton?</h4>
+                    
+                    <div class='btn-group-vertical' data-toggle='buttons'>
+                        <label class='answer btn btn-danger'><input type='radio' name='q1' value='a'> Jim Halpert</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q1' value='b'> Ryan Howard</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q1' value='c'> Michael Scott</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q1' value='d'> Erin Hannon</label>
+                    </div>
+
+                    <h4 class='question'>What type of farm does Dwight own?</h4>
+                    
+                    <div class='btn-group-vertical' data-toggle='buttons'>
+                        <label class='answer btn btn-danger'><input type='radio' name='q2' value='a'> Bear Farm</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q2' value='b'> Carrot Farm</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q2' value='c'> Beet Farm</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q2' value='d'> Beetle Farm</label>
+                    </div>
+
+                    <h4 class='question'>What name did Pam and Angela fight over for their babies?</h4>
+                    
+                    <div class='btn-group-vertical' data-toggle='buttons'>
+                        <label class='answer btn btn-danger'><input type='radio' name='q3' value='a'> Andrew</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q3' value='b'> James</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q3' value='c'> William</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q3' value='d'> Phillip</label>
+                    </div>
+
+
+                    <h4 class='question'>Where does Jim tell Pam about his feelings?</h4>
+                    
+                    <div class='btn-group-vertical' data-toggle='buttons'>
+                        <label class='answer btn btn-danger'><input type='radio' name='q4' value='a'> The office parking lot</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q4' value='b'> The warehouse</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q4' value='c'> The office</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q4' value='d'> Jim's car</label>
+                    </div>
+
+
+                    <h4 class='question'>What tattoo is Andy forced to get?</h4>
+                    
+                    <div class='btn-group-vertical' data-toggle='buttons'>
+                        <label class='answer btn btn-danger'><input type='radio' name='q5' value='a'> A wolf</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q5' value='b'> A naked man</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q5' value='c'> A nard dog</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q5' value='d'> The Cornell logo</label>
+                    </div>
+
+
+                    <h4 class='question'>Which cast member was having an affair with Angela's fiancé, the senator?</h4>
+                    
+                    <div class='btn-group-vertical' data-toggle='buttons'>
+                        <label class='answer btn btn-danger'><input type='radio' name='q6' value='a'> Andy</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q6' value='b'> Kelly</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q6' value='c'> Erin</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q6' value='d'> Oscar</label>
+                    </div>
+
+
+                    <h4 class='question'>Who ruined Pam's pregnancy secret during her wedding weekend?</h4>
+                    
+                    <div class='btn-group-vertical' data-toggle='buttons'>
+                        <label class='answer btn btn-danger'><input type='radio' name='q7' value='a'> Andy</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q7' value='b'> Jim</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q7' value='c'> Holly</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q7' value='d'> Michael</label>
+                    </div>
+
+
+                    <h4 class='question'>Which office employee did Michael hit with his car?</h4>
+                    
+                    <div class='btn-group-vertical' data-toggle='buttons'>
+                        <label class='answer btn btn-danger'><input type='radio' name='q8' value='a'> Angela</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q8' value='b'> Kelly</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q8' value='c'> Meredith</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q8' value='d'> Stanley</label>
+                    </div>
+
+
+                    <h4 class='question'>What is Michael's username for the online dating website?</h4>
+                    
+                    <div class='btn-group-vertical' data-toggle='buttons'>
+                        <label class='answer btn btn-danger'><input type='radio' name='q9' value='a'> Ready for marriage</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q9' value='b'> Little kid lover</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q9' value='c'> Kid crazy</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q9' value='d'> Looking for woman</label>
+                    </div>
+
+
+                    <h4 class='question'>What vegetable does Michael force feed Kevin?</h4>
+                    
+                    <div class='btn-group-vertical' data-toggle='buttons'>
+                        <label class='answer btn btn-danger'><input type='radio' name='q10' value='a'> Baby carrots</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q10' value='b'> Corn on the cob</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q10' value='c'> Tomatoes</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q10' value='d'> Broccoli</label>
+                    </div>
+
+                    <h4 class='question'>What was Dwight's first mistake in almost getting fired?</h4>
+                    
+                    <div class='btn-group-vertical' data-toggle='buttons'>
+                        <label class='answer btn btn-danger'><input type='radio' name='q11' value='a'> Sets a fire to practice fire safety</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q11' value='b'> Enters the woman's bathroom</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q11' value='c'> Tries to fire Pam</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q11' value='d'> Drives his car into the building</label>
+                    </div>
+
+                    <h4 class='question'>What vegetable did Toby bet the office could swap for Creed's apple, without him noticing?</h4>
+                    
+                    <div class='btn-group-vertical' data-toggle='buttons'>
+                        <label class='answer btn btn-danger'><input type='radio' name='q12' value='a'> Onion</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q12' value='b'> Potato</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q12' value='c'> Cabbage</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q12' value='d'> Tomato</label>
+                    </div>
+
+                    <h4 class='question'>What forces Nellie to almost shut down her charity initiative?</h4>
+                    
+                    <div class='btn-group-vertical' data-toggle='buttons'>
+                        <label class='answer btn btn-danger'><input type='radio' name='q13' value='a'> Ryan wants to donate all of the <br> money to Hooters </label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q13' value='b'> Dwight chooses the taliban as his <br> charity</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q13' value='c'> Kevin don't donate to Ronald McDonald<br> house because he don't get free food</label>
+                        <label class='answer btn btn-danger'><input type='radio' name='q13' value='d'> Angel tries to convince Nellie to <br> donate money to her own cats</label>
+                    </div>
+
+
+
+                    <div id="end-game">
+                        <button class="btn btn-secondary end">Submit Answers</button>
+                    </div>
+            </div>
+            
+            
+            <div id="display-end"></div>
+
+            <div id="replay-game">
+                <button class='btn btn-success replay' style="display: hidden">Replay</button>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <script src="./assets/javascript/app.js"></script>
+    
+</body>
+</html>

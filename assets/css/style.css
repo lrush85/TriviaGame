@@ -1,0 +1,101 @@
+body {
+    background-image: url("../images/the-office-background.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #312c26;
+    color: #fff;
+}
+
+.start, .play-theme {
+    color: #d8cddb;
+    background-color: #271831;
+    padding: 10px;
+    text-transform: uppercase;
+    box-shadow: 0px 0px 6px 4px rgba(15, 3, 3, 0.63);
+    position: relative;
+    top: 380px;
+    left: -40px;
+    border: none;
+    width: 200px;
+    letter-spacing: 1.5px;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+.play-theme:hover, .start:hover {
+    background-color: #d8cddb;
+    color: #271831;
+
+}
+
+#timer-display {
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    margin-top: -75px;
+}
+
+#display {
+    text-align: center;
+}
+
+#trivia {
+    background-color: red;
+    position: relative;
+    top: -100px;
+    left: 750px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 3s ease-out;
+    -webkit-transition: 3s ease-out;
+    -moz-transition: 3s ease-out;
+    -ms-transition: 3s ease-out;
+    -o-transition: 3s ease-out;
+    transform: rotate(-7deg);
+    -webkit-transform: rotate(-7deg);
+    -moz-transform: rotate(-7deg);
+    -ms-transform: rotate(-7deg);
+    -o-transform: rotate(-7deg);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+label.answer {
+    text-align: left;
+}
+
+h4.question {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+button.btn.btn-secondary.end {
+    margin-top: 25px;
+    width: 400px;   
+}
+
+label.answer.btn.btn-danger {
+    width: 400px;
+    text-align: left;
+    text-transform: uppercase;
+
+}
+
+.end-game {
+    text-align: center;
+    padding: 10px;
+}
+
+#replay-game {
+    margin-left: 415px;
+    padding: 30px;
+}
+
+.replay {
+    width: 200px;
+}
