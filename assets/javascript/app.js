@@ -46,6 +46,7 @@ $( document ).ready (function (){
 // When user clicks to replay, user is able to restart the game
     $(".replay").on("click", replay);
 
+
 // End of document ready function (do not remove)!
 });
 
@@ -75,7 +76,7 @@ function start(){
 
 function stop() {
 
-    if(time <= 0) {
+    if(time >= 0) {
         console.log();
         clearInterval(timerId);
         isClockRunning = false;
@@ -88,8 +89,8 @@ function count() {
     formatted = timeConverter(time);
     $("#timer-display").text(formatted);
 
-    if (time <= 0) {
-        end();
+    if (time === 0) {
+        stop();
     }
 }
 
@@ -104,7 +105,7 @@ function timeConverter(t) {
     }
 
     if (minutes === 0) {
-        minutes = "00";
+        minutes = "0";
     }
 
     else if (minutes < 10) {
@@ -144,25 +145,43 @@ function themeStop(){
 }
 
 // Game functions
-
 function startGame() {
 
     start();
+    oneQuestion();
     // this displays the questions and answer selections to the questions
-    $("body").css('background-image', 'none');
+    $("#office-background").fadeOut(100);
+    $("#background-image").hide();
     $("#display").show();
     $(".end").show();
-    $("#the-office-team").show()
+    $("#the-office-team").show();
     $("#trivia").show();
-    $("#trivia").animate({
-        width: "300px",
-        left: "840px"
-    }, 50, function(){});
     $(".replay").hide();
     themeStop();
 }
 
 
+// This will show one question at a time.
+
+function oneQuestion() {
+    var totalQuestions = $(".questions").length;
+    var currentQuestion = 0;
+    $questions = $(".questions");
+    $questions.hide();
+    $($questions.get(currentQuestion)).fadeIn();
+    $("#next").on("click", function() {
+        $($questions.get(currentQuestion)).fadeOut(function() {
+            currentQuestion = currentQuestion + 1;
+
+            if (currentQuestion === totalQuestions) {
+                end();
+            } else {
+                $($questions.get(currentQuestion)).fadeIn();
+            }
+        });
+    });
+
+}
 
 function end() {
     
@@ -178,10 +197,14 @@ function end() {
     userChoice("q10", "d");
     userChoice("q11", "a");
     userChoice("q12", "b");
+    userChoice("q13", "b");
+    userChoice("q14", "b");
+    userChoice("q15", "c");
     
     $("#display-end").html(
-        "<div class='container'><h2 class='end-game'>End of Game</h2><h5 class='end-game'>How did you do?</h5><p class='end-game'>Correct Answers: " + answeredCorrect + "</p><p class='end-game'>Incorrect Answers: " + answeredIncorrect + "</p><p class='end-game'>Unaswered: " + unanswered + "</p></div>"
+        "<div id='end-game-container' class='container'><h2 class='end-game'>End of Game</h2><h5 class='end-game'>How did you do?</h5><p class='end-game'>Correct Answers: " + answeredCorrect + "</p><p class='end-game'>Incorrect Answers: " + answeredIncorrect + "</p><p class='end-game'>Unaswered: " + unanswered + "</p></div>"
     );
+
     stop();
     reset();
     $("#display").hide();
@@ -193,13 +216,11 @@ function end() {
 }
 
 function replay() {
-
     startGame();
     $("#display").show();
     $("#timer-display").show();
     $(".end").show();
     $("#display-end").hide();
-    clearChoices();
 }
 
 function clearChoices() {
@@ -216,6 +237,9 @@ function clearChoices() {
     $("input[name=q10]").val([]);
     $("input[name=q11]").val([]);
     $("input[name=q12]").val([]);
+    $("input[name=q13]").val([]);
+    $("input[name=q14]").val([]);
+    $("input[name=q15]").val([]);
 }
 
 function userChoice(question, answer) {
